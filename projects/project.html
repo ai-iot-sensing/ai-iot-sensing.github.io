@@ -39,17 +39,26 @@
             <span class="author-block">
               <a href="#">Author Name</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a href="#">Author Name</a><sup>2</sup>,
+              <a href="#">Author Name</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="#">Author Name</a><sup>3</sup>
+              <a href="#">Author Name</a><sup>1</sup>
+            </span>
+            <span class="author-block">
+              <a href="#">Author Name</a><sup>1</sup>
+            </span>
+            <span class="author-block">
+              <a href="#">Author Name</a><sup>1</sup>
+            </span>
+            <span class="author-block">
+              <a href="#">Author Name</a><sup>1</sup>
             </span>
           </div>
 
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>Origin Research,</span><br>
-            <span class="author-block"><sup>2</sup>Origin Research,</span>
-            <span class="author-block"><sup>3</sup>Origin Research,</span><br>
+            <!-- <span class="author-block"><sup>2</sup>Origin Research,</span>
+            <span class="author-block"><sup>3</sup>Origin Research,</span><br> -->
             <span class="paper-block"><b>Conference/Journal Year</b></span>
           </div>
 
@@ -131,12 +140,37 @@
 </section>
 
 <section class="section">
+  <div class="container" style="margin-bottom: 2vh;">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Data collection</h2>
+        <div class="content has-text-justified">
+          <p>
+            Although users could move about naturally and perform tasks as they would in daily life, 
+            we established basic data-collection protocols to ensure repeatability. 
+            At the start of each session, participants completed a brief calibration phase to check device connectivity, 
+            verify timestamps, and confirm stable CSI logging. Tasks ranged from remaining still in a seated position to walking between rooms, 
+            opening doors, or carrying objects through hallways, so that a variety of motion patterns and occlusions would be captured. 
+            Whenever possible, time-aligned external information was collected through camera recordings or local sensor logs to annotate user activities 
+            or highlight environmental changes. We also used cross-device and cross-packet synchronization methods—either relying on 
+            a common Network Time Protocol server or exchanging time-stamped handshake packets—to mitigate clock drift among multiple CSI-capturing devices. 
+            To track the distinct tasks, user states, or interference patterns, participants occasionally provided notes on events such as large file downloads, 
+            video streaming, or additional network congestion in the area. Although not strictly scripted, 
+            this approach yielded structured data across heterogeneous real-world scenarios with consistent referencing to ground-truth events.
+          </p>
+        </div>
+      </div>
+    </div>
+</div>
+</section>
+
+<section class="section">
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-full has-text-centered content">
         <h2 class="title is-3" id="leaderboard">Results</h2>
         <div class="content">
-          <p class="mt-3">Your results description here</p>
+          <p class="mt-3">Results description here</p>
           <table class="js-sort-table" id="results">
             <tr>
                 <td class="js-sort-number"><strong>#</strong></td>
@@ -157,9 +191,9 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title is-3 has-text-centered">BibTeX</h2>
-    <pre><code>@inproceedings{your-paper-id,
+    <pre><code>@inproceedings{paper-id,
   author    = {Author1 and Author2 and Author3},
-  title     = {Your Paper Title},
+  title     = {Paper Title},
   booktitle = {Conference/Journal Name},
   year      = {Year}
 }</code></pre>
