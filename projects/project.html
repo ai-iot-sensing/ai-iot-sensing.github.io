@@ -30,12 +30,12 @@
       <div class="columns is-centered">
         <div class="column has-text-centered">
           <h1 class="title is-1 publication-title is-bold">
-            WiFi All Around: A Large-Scale Benchmark for Real-World Wireless Sensing
+            CSI-Bench: A Large-Scale In-the-Wild Dataset for MultitaskWiFi Sensing
           </h1>
           <!-- <h2 class="subtitle is-3 publication-subtitle">
 
           </h2> -->
-          <div class="is-size-5 publication-authors">
+<!--           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="#">Author Name</a><sup>1</sup>,</span>
             <span class="author-block">
@@ -54,11 +54,11 @@
               <a href="#">Author Name</a><sup>1</sup>
             </span>
           </div>
-
+ -->
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>Origin Research,</span><br>
-            <!-- <span class="author-block"><sup>2</sup>Origin Research,</span>
-            <span class="author-block"><sup>3</sup>Origin Research,</span><br> -->
+            <span class="author-block"><sup>2</sup>Origin Research,</span>
+            <span class="author-block"><sup>3</sup>Origin Research,</span><br>
             <span class="paper-block"><b>submitted to NIPS 2025</b></span>
           </div>
 
@@ -145,23 +145,31 @@ We introduce CSI-Bench, a large-scale, in-the-wild benchmark dataset collected f
         <h2 class="title is-3">Data collection</h2>
         <div class="content has-text-justified">
           <p>
-            Although users could move about naturally and perform tasks as they would in daily life, 
-            we established basic data-collection protocols to ensure repeatability. 
-            At the start of each session, participants completed a brief calibration phase to check device connectivity, 
-            verify timestamps, and confirm stable CSI logging. Tasks ranged from remaining still in a seated position to walking between rooms, 
-            opening doors, or carrying objects through hallways, so that a variety of motion patterns and occlusions would be captured. 
-            Whenever possible, time-aligned external information was collected through camera recordings or local sensor logs to annotate user activities 
-            or highlight environmental changes. We also used cross-device and cross-packet synchronization methods—either relying on 
-            a common Network Time Protocol server or exchanging time-stamped handshake packets—to mitigate clock drift among multiple CSI-capturing devices. 
-            To track the distinct tasks, user states, or interference patterns, participants occasionally provided notes on events such as large file downloads, 
-            video streaming, or additional network congestion in the area. Although not strictly scripted, 
-            this approach yielded structured data across heterogeneous real-world scenarios with consistent referencing to ground-truth events.
+          	To support robust and generalizable WiFi sensing research, we build a diverse collection of datasets
+captured in real-world environments using commercial WiFi devices. CSI-Bench spans over 460
+hours of CSI recordings across 35 unique users, 26 environments, and 16 device types, covering
+both infrastructure and edge devices operating under varied network conditions. Data were collected
+in homes, offices, and public indoor areas with minimal control over ambient interference or user
+behavior. Each dataset is designed to support one or more sensing tasks, including fall detection
+(Fall), breathing monitoring (Breath), localization (Loc.), human activity recognition (HAR), user
+identification (UID), and proximity estimation (Prox.). This section details the hardware, environments, and collection protocols used to
+capture the datasets.
+
+
+
           </p>
         </div>
       </div>
     </div>
 </div>
 </section>
+<section class="section">
+  <div class="container has-text-centered">
+    <img src="static/images/csi_example.svg" alt="CSI Example" width="80%">
+    <p class="mt-2">Representative CSI samples for different activities and motion sources, where the x-axis is time and the y-axis is subcarrier index. These samples show the CSI signal patterns from human actions and non-human motions.</p>
+  </div>
+</section>
+
 
 <section class="section">
   <div class="container">
@@ -239,6 +247,68 @@ We introduce CSI-Bench, a large-scale, in-the-wild benchmark dataset collected f
             </tbody>
           </table>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-full has-text-centered content">
+        <h2 class="title is-4" id="task-comparison">Task-Specific vs Multi-Task Training</h2>
+        <p class="mt-3">
+          Comparison of task-specific and multi-task training for the Transformer model across shared-data tasks. 
+          Accuracy (Acc), F1-score (F1), and improvements (Δ) are reported as mean ± std (%) over three runs.
+        </p>
+        <table class="table is-bordered is-striped is-fullwidth" style="margin-top: 1em;">
+          <thead>
+            <tr>
+              <th rowspan="2">Task</th>
+              <th colspan="2">Task-Specific Training</th>
+              <th colspan="2">Multi-Task Joint Training</th>
+              <th colspan="2">Improvement</th>
+            </tr>
+            <tr>
+              <th>Acc</th>
+              <th>F1</th>
+              <th>Acc</th>
+              <th>F1</th>
+              <th>ΔAcc</th>
+              <th>ΔF1</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Human Activity Recognition</td>
+              <td>75.40 ±0.93</td>
+              <td>75.49 ±0.73</td>
+              <td>87.79 ±0.00</td>
+              <td>86.47 ±0.00</td>
+              <td>+12.39</td>
+              <td>+10.98</td>
+            </tr>
+            <tr>
+              <td>User Identification</td>
+              <td>99.51 ±0.32</td>
+              <td>99.51 ±0.32</td>
+              <td>99.83 ±0.00</td>
+              <td>100.00 ±0.00</td>
+              <td>+0.32</td>
+              <td>+0.49</td>
+            </tr>
+            <tr>
+              <td>Proximity Recognition</td>
+              <td>77.52 ±3.13</td>
+              <td>77.35 ±3.24</td>
+              <td>87.85 ±0.00</td>
+              <td>88.67 ±0.00</td>
+              <td>+10.33</td>
+              <td>+11.32</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
