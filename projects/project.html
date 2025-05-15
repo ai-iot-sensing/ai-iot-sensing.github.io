@@ -111,7 +111,7 @@
         <div id="results-carousel" class="carousel results-carousel">
           <div class="box m-5">
             <div class="content has-text-centered">
-              <img src="static/images/csibench_concept.JPG" alt="description" width="84%"/>
+              <img src="static/images/csibench_concept.svg" alt="description" width="84%"/>
               <p> CSI-Bench overview. The benchmark features multiple commercial routers and IoT devices
 deployed in real homes to collect CSI data. It supports a wide range of human-centric sensing tasks,
 enabling robust model development across diverse hardware setups and real-world scenarios.</p>
@@ -169,16 +169,74 @@ We introduce CSI-Bench, a large-scale, in-the-wild benchmark dataset collected f
       <div class="column is-full has-text-centered content">
         <h2 class="title is-3" id="leaderboard">Results</h2>
         <div class="content">
-          <p class="mt-3">Results description here</p>
-          <table class="js-sort-table" id="results">
-            <tr>
-                <td class="js-sort-number"><strong>#</strong></td>
-                <td class="js-sort-number"><strong>Model</strong></td>
-                <td class="js-sort-number"><strong>Method</strong></td>
-                <td class="js-sort-number"><strong>Date</strong></td>
-                <td class="js-sort-number"><strong>Performance</strong></td>
-            </tr>
-            <!-- Add your results rows here -->
+          <p class="mt-3">Performance comparison of supervised models across four WiFi sensing tasks. Accuracy (Acc) and F1-score are reported as mean ± std (%) over three runs.</p>
+          <table class="table is-bordered is-striped is-fullwidth">
+            <thead>
+              <tr>
+                <th rowspan="2">Model</th>
+                <th colspan="2">Fall Detection</th>
+                <th colspan="2">Breathing Detection</th>
+                <th colspan="2">Room-Level Localization</th>
+                <th colspan="2">Motion Source Recognition</th>
+              </tr>
+              <tr>
+                <th>Acc</th><th>F1</th>
+                <th>Acc</th><th>F1</th>
+                <th>Acc</th><th>F1</th>
+                <th>Acc</th><th>F1</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>MLP</td>
+                <td>92.16 ±0.91</td><td>92.17 ±0.92</td>
+                <td>97.59 ±0.08</td><td>97.59 ±0.08</td>
+                <td>87.14 ±0.80</td><td>86.90 ±0.83</td>
+                <td>98.86 ±0.07</td><td>98.86 ±0.07</td>
+              </tr>
+              <tr>
+                <td>ResNet-18</td>
+                <td>94.88 ±0.26</td><td>94.89 ±0.26</td>
+                <td>98.58 ±0.17</td><td>98.58 ±0.17</td>
+                <td>100.00 ±0.00</td><td>100.00 ±0.00</td>
+                <td>99.56 ±0.07</td><td>99.56 ±0.07</td>
+              </tr>
+              <tr>
+                <td>LSTM</td>
+                <td>94.93 ±0.51</td><td>94.92 ±0.50</td>
+                <td>98.62 ±0.17</td><td>98.62 ±0.17</td>
+                <td>99.12 ±0.27</td><td>99.12 ±0.26</td>
+                <td>98.42 ±0.19</td><td>98.42 ±0.19</td>
+              </tr>
+              <tr>
+                <td>Transformer</td>
+                <td>94.28 ±0.72</td><td>94.26 ±0.72</td>
+                <td>98.64 ±0.19</td><td>98.64 ±0.19</td>
+                <td>99.27 ±0.22</td><td>99.27 ±0.22</td>
+                <td>98.61 ±0.27</td><td>98.61 ±0.27</td>
+              </tr>
+              <tr>
+                <td>ViT</td>
+                <td>93.58 ±0.71</td><td>93.59 ±0.70</td>
+                <td>98.63 ±0.17</td><td>98.63 ±0.17</td>
+                <td>99.94 ±0.11</td><td>99.94 ±0.11</td>
+                <td>98.74 ±0.10</td><td>98.74 ±0.10</td>
+              </tr>
+              <tr>
+                <td>PatchTST</td>
+                <td>94.03 ±0.74</td><td>94.03 ±0.73</td>
+                <td>98.84 ±0.13</td><td>98.84 ±0.13</td>
+                <td>99.91 ±0.10</td><td>99.91 ±0.10</td>
+                <td>98.86 ±0.19</td><td>98.86 ±0.19</td>
+              </tr>
+              <tr>
+                <td>TimeSformer-1D</td>
+                <td>93.86 ±1.16</td><td>93.87 ±1.13</td>
+                <td>98.68 ±0.21</td><td>98.68 ±0.21</td>
+                <td>100.00 ±0.00</td><td>100.00 ±0.00</td>
+                <td>98.38 ±0.17</td><td>98.39 ±0.17</td>
+              </tr>
+            </tbody>
           </table>
         </div>
       </div>
