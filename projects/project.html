@@ -5,7 +5,7 @@
   <meta name="description" content="Your Project Description">
   <meta name="keywords" content="your, keywords">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>WiFi All Around: A Large-Scale Benchmark for Real-World Wireless Sensing</title>
+  <title>CSI-Bench: A Large-Scale In-the-Wild Dataset for Multitask WiFi Sensing</title>
 
   <link rel="icon" href="./static/images/your-icon.png">
 
@@ -59,12 +59,12 @@
             <span class="author-block"><sup>1</sup>Origin Research,</span><br>
             <!-- <span class="author-block"><sup>2</sup>Origin Research,</span>
             <span class="author-block"><sup>3</sup>Origin Research,</span><br> -->
-            <span class="paper-block"><b>NIPS 2025</b></span>
+            <span class="paper-block"><b>submitted to NIPS 2025</b></span>
           </div>
 
           <div class="column has-text-centered">
             <div class="publication-links">
-              <span class="link-block">
+              <!-- <span class="link-block">
                 <a href="#" class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -79,7 +79,7 @@
                   </span>
                   <span>arXiv</span>
                 </a>
-              </span>
+              </span> -->
               <span class="link-block">
                 <a href="#" class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -111,8 +111,10 @@
         <div id="results-carousel" class="carousel results-carousel">
           <div class="box m-5">
             <div class="content has-text-centered">
-              <img src="static/images/your-image.png" alt="description" width="84%"/>
-              <p> image description here</p>
+              <img src="static/images/csibench_concept.JPG" alt="description" width="84%"/>
+              <p> CSI-Bench overview. The benchmark features multiple commercial routers and IoT devices
+deployed in real homes to collect CSI data. It supports a wide range of human-centric sensing tasks,
+enabling robust model development across diverse hardware setups and real-world scenarios.</p>
             </div>
           </div>
         </div>
@@ -127,11 +129,8 @@
         <h2 class="title is-3">Introduction</h2>
         <div class="content has-text-justified">
           <p>
-            We present a large-scale WiFi sensing dataset and benchmark designed to reflect the challenges of real-world deployments. 
-            Our dataset includes over X hours of data collected with diverse IoT devices across multiple environments and users. 
-            Covering a suite of practical sensing tasks—including activity recognition, localization, proximity detection, motion source recognition, breathing estimation and presence detection—this benchmark supports evaluation under in-distribution, cross-domain, and few-shot settings. 
-            We provide strong baselines including standard supervised models, a robust environment-invariant method, and meta-learning approaches. 
-            Our benchmark reveals significant generalization gaps and serves as a platform for advancing practical machine learning for wireless sensing.
+
+We introduce CSI-Bench, a large-scale, in-the-wild benchmark dataset collected from commercial WiFi edge devices deployed in real homes with real users. It includes single-task datasets for fall detection, breathing monitoring, localization, and motion source recognition, as well as a multitask dataset with joint labels for user identity, activity, and proximity. Some samples include multiple labels, enabling efficient multitask learning for resource-constrained edge health applications. CSI-Bench captures realistic signal variability and supports research on generalizable, data-efficient models for high-dimensional time-series data. We provide standardized splits and benchmark results across supervised, multitask, and few-shot learning settings. CSI-Bench provides a foundation for developing scalable, privacy-preserving wireless AI systems for health monitoring and broader human-centric applications.
           </p>
         </div>
       </div>
