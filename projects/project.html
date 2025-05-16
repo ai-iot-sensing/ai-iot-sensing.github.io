@@ -155,16 +155,19 @@ behavior. Each dataset is designed to support one or more sensing tasks, includi
 identification (UID), and proximity estimation (Prox.). 
 <br>
 <br>
-The data collection system architecture consists of three
-core components: on-premise sensing devices, cloud services,
-and user interfaces. Devices form Bot–Origin–MO topology across tiers,
-where an Origin may act as a Bot for a superior Origin. Two primary configurations are most
-common in typical home environments: 1) Origin-Aggregated
-Mode: One or more Bots connect to a dedicated Origin. 2)
-Direct-to-Master Mode: Bots directly communicate with MO.
+The data collection system follows a hierarchical sensing architecture composed of edge devices, a router-based local network, a cloud-based sensing server, and a cloud-based front server for user interaction. Commercial WiFi-enabled edge devices (e.g., smart speakers) deployed in real-world environments act as signal sources or reflectors. These devices transmit or interact with WiFi signals within their surroundings. A central router captures CSI from these interactions and relays the data to a local Sensing Server via MQTT protocol. This server handles real-time CSI decoding, pre-processing, and task-specific feature extraction.
+<br>
+<br>
+The Sensing Server communicates with the Front Server, which supports user interaction and coordination through mobile applications or dashboards. This enables live monitoring and remote control of the sensing tasks, while also facilitating user labeling or feedback where needed.
+<br>
+<br>
+Data were collected across varied deployment scenarios—homes, offices, and public indoor spaces—without strict control over ambient conditions. This system supports multiple sensing tasks, including fall detection, breathing monitoring, localization, human activity recognition, user identification, and proximity estimation. Each sensing session reflects real-world variability in users, devices, and network environments, enabling robust and generalizable learning from the collected CSI data.
+<br>
+<br>
+
 
           <div class="container has-text-centered">
-    <img src="static/images/system_architecture.JPG" alt="CSI Example" width="80%">
+    <img src="static/images/system_architecture.svg" alt="CSI Example" width="80%">
     <p class="mt-2">Figure: Overview of data collection system architecture.</p>
   </div>
 
