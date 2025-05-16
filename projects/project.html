@@ -158,11 +158,6 @@ identification (UID), and proximity estimation (Prox.).
 The data collection system follows a hierarchical sensing architecture composed of edge devices, a router-based local network, a cloud-based sensing server, and a cloud-based front server for user interaction. Commercial WiFi-enabled edge devices (e.g., smart speakers) deployed in real-world environments act as signal sources or reflectors. These devices transmit or interact with WiFi signals within their surroundings. A central router captures CSI from these interactions and relays the data to a local Sensing Server via MQTT protocol. This server handles real-time CSI decoding, pre-processing, and task-specific feature extraction.
 <br>
 <br>
-The Sensing Server communicates with the Front Server, which supports user interaction and coordination through mobile applications or dashboards. This enables live monitoring and remote control of the sensing tasks, while also facilitating user labeling or feedback where needed.
-<br>
-<br>
-
-
  <div class="container has-text-centered">
   <img src="static/images/system_architecture.svg" alt="CSI Example" width="50%">
   <p class="mt-2">Figure: Overview of data collection system architecture.</p>
