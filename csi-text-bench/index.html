@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="CSI-TextBench: WiFi CSI paired with natural language for language-grounded ambient perception.">
+  <meta name="keywords" content="WiFi, CSI, language alignment, multimodal, benchmark, dataset">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CSI-TextBench: A Dataset and Benchmark for Language-Grounded Ambient Perception with WiFi</title>
+
+  <link rel="icon" href="static/images/your-icon.png">
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title is-bold">
+            CSI-TextBench: A Dataset and Benchmark for Language-Grounded Ambient Perception with WiFi
+          </h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Anonymous authors (camera-ready version will list affiliations)</span>
+          </div>
+          <div class="is-size-6 publication-authors mt-2">
+            <span class="paper-block"><em>Submitted to NeurIPS 2026</em></span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- Replace # with arXiv / PDF URLs when available -->
+              <span class="link-block">
+                <a href="#" class="external-link button is-normal is-rounded is-dark" title="Link coming soon">
+                  <span class="icon"><i class="ai ai-arxiv"></i></span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#" class="external-link button is-normal is-rounded is-dark" title="Link coming soon">
+                  <span class="icon"><i class="fab fa-github"></i></span>
+                  <span>Code</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="#" class="external-link button is-normal is-rounded is-dark" title="Link coming soon">
+                  <span class="icon"><i class="far fa-images"></i></span>
+                  <span>Dataset</span>
+                </a>
+              </span>
+            </div>
+            <p class="is-size-7 mt-3 has-text-grey">Paper, code, and dataset links will be updated upon public release.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="margin-top: -150px; margin-bottom: -100px;">
+    <div class="columns is-centered m-6">
+      <div class="column is-full has-text-centered content">
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/concept_figure.PNG" alt="CSI-TextBench concept" width="84%"/>
+              <p>CSI-TextBench builds on diverse WiFi CSI recordings (including large-scale in-the-wild data) and pairs them with hierarchical natural-language descriptions, enabling CSI–language alignment, open-vocabulary queries, and compositional scene understanding.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="margin-bottom: 2vh;">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Overview</h2>
+        <div class="content has-text-justified">
+          <p>
+            Indoor context matters for assisted living, smart buildings, and broader ambient intelligence, yet it remains weakly connected to the language-aligned paradigm of modern multimodal systems. WiFi Channel State Information (CSI) passively captures human activity and environmental dynamics through ubiquitous wireless infrastructure—but unlike vision and audio, CSI lacks naturally co-occurring text, leaving a gap between wireless sensing and language-grounded AI.
+          </p>
+          <p>
+            <strong>CSI-TextBench</strong> is the first large-scale dataset and benchmark for CSI–language alignment. It unifies three sensing benchmarks into <strong>285,790</strong> samples across <strong>7 tasks</strong> and <strong>353 classes</strong>, paired with <strong>2,291</strong> hierarchically structured descriptions to form roughly <strong>2.0 million</strong> CSI–text pairs. The benchmark evaluates alignment methods across supervised-style recognition, few-shot transfer to unseen classes, open-vocabulary prompting, and compositional reasoning over activity, proximity, and identity.
+          </p>
+          <p>
+            Experiments show that contrastive alignment can match supervised classifiers without class labels, transfer through few-shot adaptation, and accept open-vocabulary natural-language queries. A single unified model supports compositional scene understanding on joint queries, achieving <strong>86.9%</strong> top-1 accuracy on <strong>140</strong> composite scenes—outperforming ensembles of task-specific classifiers. CSI-TextBench aims to establish WiFi as a language-indexed perception layer for ambient intelligence.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="margin-bottom: 2vh;">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Dataset</h2>
+        <div class="content has-text-justified">
+          <p>
+            CSI-TextBench integrates <strong>CSI-Bench</strong>, <strong>XRF55</strong>, and <strong>SignFi</strong> with standardized amplitude tensors and task-aware templated text (including hierarchical captions for multi-attribute scenes). Signals follow a unified preprocessing pipeline consistent with CSI-Bench: amplitude extraction, 5-second windows, z-normalization, and aligned subcarrier dimensions. Text is grounded in signal-relevant semantics—activity, gesture, proximity, motion source, and user-related attributes—without leaking deployment-specific identifiers.
+          </p>
+          <p class="has-text-centered"><strong>Task-level statistics (from the paper)</strong></p>
+          <div class="table-container">
+            <table class="table is-bordered is-striped is-fullwidth">
+              <thead>
+                <tr>
+                  <th>Task</th>
+                  <th>Source</th>
+                  <th>Classes</th>
+                  <th>CSI samples</th>
+                  <th>Unique texts</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>HAR</td><td>CSI-Bench</td><td>5</td><td>55,684</td><td>221</td></tr>
+                <tr><td>Proximity</td><td>CSI-Bench</td><td>4</td><td>55,684</td><td>216</td></tr>
+                <tr><td>User ID</td><td>CSI-Bench</td><td>7</td><td>55,684</td><td>224</td></tr>
+                <tr><td>Fall detection</td><td>CSI-Bench</td><td>2</td><td>6,700</td><td>10</td></tr>
+                <tr><td>Motion source</td><td>CSI-Bench</td><td>4</td><td>60,858</td><td>20</td></tr>
+                <tr><td>Sign recognition</td><td>SignFi</td><td>276</td><td>8,280</td><td>1,380</td></tr>
+                <tr><td>Action recognition</td><td>XRF55</td><td>55</td><td>42,900</td><td>220</td></tr>
+                <tr><td><strong>Total</strong></td><td></td><td><strong>353</strong></td><td><strong>285,790</strong></td><td><strong>2,291</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="is-size-7">
+            Multitask CSI-Bench tasks (HAR, Proximity, User ID) share the same underlying recordings; total task instances correspond to <strong>174,422</strong> unique recordings. For XRF55 and SignFi, the release includes preprocessing scripts and CSI–text registry files; obtain raw CSI from the original dataset providers under their licenses.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="margin-bottom: 2vh;">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Benchmark</h2>
+        <div class="content has-text-justified">
+          <p>
+            Six alignment methods spanning contrastive (InfoNCE, SigLIP), anchor-based (LanguageBind, CentroBind), non-contrastive (Barlow Twins), and generative masked prediction objectives are evaluated under a shared dual-encoder design with a frozen text encoder and learned CSI encoder, isolating the effect of the alignment objective on many-to-many CSI–text correspondence.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3 has-text-centered">BibTeX</h2>
+    <pre><code>@misc{csi-textbench,
+  title        = {CSI-TextBench: A Dataset and Benchmark for Language-Grounded Ambient Perception with WiFi},
+  author       = {Anonymous},
+  year         = {2026},
+  note         = {Submitted to NeurIPS 2026}
+}</code></pre>
+    <p class="is-size-7 has-text-centered">Replace the BibTeX entry with the camera-ready citation when available.</p>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="columns is-centered">
+    <div class="column is-8">
+      <div class="content">
+        <p>
+          This website is adapted from <a href="https://nerfies.github.io/">Nerfies</a>, licensed under a <a rel="license"
+            href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+        </p>
+        <p class="mt-2"><a href="../projects/project.html">CSI-Bench project page</a> · <a href="../index.html">Site home</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
