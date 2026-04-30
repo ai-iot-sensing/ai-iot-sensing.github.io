@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Your Project Description">
+  <meta name="keywords" content="your, keywords">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CSI-Bench: A Large-Scale In-the-Wild Dataset for Multitask WiFi Sensing</title>
+
+  <link rel="icon" href="./static/images/your-icon.png">
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/leaderboard.css">
+
+  <script type="text/javascript" src="static/js/sort-table.js" defer></script>
+  <script src="./visualizer/data/data_public.js" defer></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title is-bold">
+            CSI-Bench: A Large-Scale In-the-Wild Dataset for Multitask WiFi Sensing
+          </h1>
+          <!-- <h2 class="subtitle is-3 publication-subtitle">
+
+          </h2> -->
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://sites.google.com/view/guozhenzhu/home">Guozhen Zhu</a>,</span>
+            <span class="author-block">
+              <a href="https://yuqianhu09.github.io/">Yuqian Hu</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/weihang-gao-leo">Weihang Gao</a>
+            </span>
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/wei-hsiang-wang-288bba216">Wei-Hsiang Wang</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://sites.google.com/site/beibeibbwang/">Beibei Wang</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://kjrayliu.org/">K. J. Ray Liu</a>,
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Origin Research</span><br>
+            <!-- <span class="author-block"><sup>2</sup>Origin Research,</span> -->
+            <!-- <span class="author-block"><sup>3</sup>Origin Research,</span><br> -->
+            <!-- <span class="paper-block"><b>submitted to NIPS 2025</b></span> -->
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+<!--               <span class="link-block">
+                <a href="#" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span> -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2505.21866" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/Jenny-Zhu/CSI-Bench-Real-WiFi-Sensing-Benchmark/" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://kaggle.com/datasets/df9d680b62e1c663333fe8739e34030509beccecd8b5561ebb367f8f5d4a1e05" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Dataset</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="margin-top: -150px; margin-bottom: -100px;">
+    <div class="columns is-centered m-6">
+      <div class="column is-full has-text-centered content">
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="box m-5">
+            <div class="content has-text-centered">
+              <img src="static/images/csibench_concept.svg" alt="description" width="84%"/>
+              <p> CSI-Bench overview. The benchmark features multiple commercial routers and IoT devices
+deployed in real homes to collect CSI data. It supports a wide range of human-centric sensing tasks,
+enabling robust model development across diverse hardware setups and real-world scenarios.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+<section class="section">
+  <div class="container" style="margin-bottom: 2vh;">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Introduction</h2>
+        <div class="content has-text-justified">
+          <p>
+
+We introduce CSI-Bench, a large-scale, in-the-wild benchmark dataset collected from commercial WiFi edge devices deployed in real homes with real users. It includes single-task datasets for fall detection, breathing monitoring, localization, and motion source recognition, as well as a multitask dataset with joint labels for user identity, activity, and proximity. Some samples include multiple labels, enabling efficient multitask learning for resource-constrained edge health applications. CSI-Bench captures realistic signal variability and supports research on generalizable, data-efficient models for high-dimensional time-series data. We provide standardized splits and benchmark results across supervised, multitask, and few-shot learning settings. CSI-Bench provides a foundation for developing scalable, privacy-preserving wireless AI systems for health monitoring and broader human-centric applications.
+          </p>
+        </div>
+      </div>
+    </div>
+</div>
+</section>
+
+<section class="section">
+  <div class="container" style="margin-bottom: 2vh;">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Data collection</h2>
+        <div class="content has-text-justified">
+          <p>
+          	To support robust and generalizable WiFi sensing research, we build a diverse collection of datasets
+captured in real-world environments using commercial WiFi devices. CSI-Bench spans over 460
+hours of CSI recordings across 35 unique users, 26 environments, and 16 device types, covering
+both infrastructure and edge devices operating under varied network conditions. Data were collected
+in homes, offices, and public indoor areas with minimal control over ambient interference or user
+behavior. Each dataset is designed to support one or more sensing tasks, including fall detection
+(Fall), breathing monitoring (Breath), localization (Loc.), human activity recognition (HAR), user
+identification (UID), and proximity estimation (Prox.). 
+<br>
+<br>
+The data collection system follows a hierarchical sensing architecture composed of edge devices, a router-based local network, a cloud-based sensing server, and a cloud-based front server for user interaction. Commercial WiFi-enabled edge devices (e.g., smart speakers) deployed in real-world environments act as signal sources or reflectors. These devices transmit or interact with WiFi signals within their surroundings. A central router captures CSI from these interactions and relays the data to a local Sensing Server via MQTT protocol. This server handles real-time CSI decoding, pre-processing, and task-specific feature extraction.
+<br>
+<br>
+ <div class="container has-text-centered">
+  <img src="static/images/system_architecture.svg" alt="CSI Example" width="50%">
+  <p class="mt-2">Figure: Overview of data collection system architecture.</p>
+</div>
+
+<br>
+<br>
+      <div class="container has-text-centered">
+    <img src="static/images/csi_examples.svg" alt="CSI Example" width="80%">
+    <p class="mt-2">Figure: Representative CSI samples for different activities and motion sources, where the x-axis is time and the y-axis is subcarrier index. These samples show the CSI signal patterns from human actions and non-human motions.</p>
+  </div>
+        </div>
+      </div>
+    </div>
+</div>
+</section>
+<!-- 
+<section class="section">
+  <div class="container has-text-centered">
+    <img src="static/images/system_architecture.JPG" alt="CSI Example" width="80%">
+    <p class="mt-2">Overview of data collection system architecture.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container has-text-centered">
+    <img src="static/images/csi_examples.svg" alt="CSI Example" width="80%">
+    <p class="mt-2">Representative CSI samples for different activities and motion sources, where the x-axis is time and the y-axis is subcarrier index. These samples show the CSI signal patterns from human actions and non-human motions.</p>
+  </div>
+</section>
+ -->
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-full has-text-centered content">
+        <h2 class="title is-3" id="leaderboard">Results</h2>
+        <div class="content">
+          <p class="mt-3">Performance comparison of supervised models across four WiFi sensing tasks. Accuracy (Acc) and F1-score are reported as mean ± std (%) over three runs.</p>
+          <table class="table is-bordered is-striped is-fullwidth">
+            <thead>
+              <tr>
+                <th rowspan="2">Model</th>
+                <th colspan="2">Fall Detection</th>
+                <th colspan="2">Breathing Detection</th>
+                <th colspan="2">Room-Level Localization</th>
+                <th colspan="2">Motion Source Recognition</th>
+              </tr>
+              <tr>
+                <th>Acc</th><th>F1</th>
+                <th>Acc</th><th>F1</th>
+                <th>Acc</th><th>F1</th>
+                <th>Acc</th><th>F1</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>MLP</td>
+                <td>92.16 ±0.91</td><td>92.17 ±0.92</td>
+                <td>97.59 ±0.08</td><td>97.59 ±0.08</td>
+                <td>87.14 ±0.80</td><td>86.90 ±0.83</td>
+                <td>98.86 ±0.07</td><td>98.86 ±0.07</td>
+              </tr>
+              <tr>
+                <td>ResNet-18</td>
+                <td>94.88 ±0.26</td><td>94.89 ±0.26</td>
+                <td>98.58 ±0.17</td><td>98.58 ±0.17</td>
+                <td>100.00 ±0.00</td><td>100.00 ±0.00</td>
+                <td>99.56 ±0.07</td><td>99.56 ±0.07</td>
+              </tr>
+              <tr>
+                <td>LSTM</td>
+                <td>94.93 ±0.51</td><td>94.92 ±0.50</td>
+                <td>98.62 ±0.17</td><td>98.62 ±0.17</td>
+                <td>99.12 ±0.27</td><td>99.12 ±0.26</td>
+                <td>98.42 ±0.19</td><td>98.42 ±0.19</td>
+              </tr>
+              <tr>
+                <td>Transformer</td>
+                <td>94.28 ±0.72</td><td>94.26 ±0.72</td>
+                <td>98.64 ±0.19</td><td>98.64 ±0.19</td>
+                <td>99.27 ±0.22</td><td>99.27 ±0.22</td>
+                <td>98.61 ±0.27</td><td>98.61 ±0.27</td>
+              </tr>
+              <tr>
+                <td>ViT</td>
+                <td>93.58 ±0.71</td><td>93.59 ±0.70</td>
+                <td>98.63 ±0.17</td><td>98.63 ±0.17</td>
+                <td>99.94 ±0.11</td><td>99.94 ±0.11</td>
+                <td>98.74 ±0.10</td><td>98.74 ±0.10</td>
+              </tr>
+              <tr>
+                <td>PatchTST</td>
+                <td>94.03 ±0.74</td><td>94.03 ±0.73</td>
+                <td>98.84 ±0.13</td><td>98.84 ±0.13</td>
+                <td>99.91 ±0.10</td><td>99.91 ±0.10</td>
+                <td>98.86 ±0.19</td><td>98.86 ±0.19</td>
+              </tr>
+              <tr>
+                <td>TimeSformer-1D</td>
+                <td>93.86 ±1.16</td><td>93.87 ±1.13</td>
+                <td>98.68 ±0.21</td><td>98.68 ±0.21</td>
+                <td>100.00 ±0.00</td><td>100.00 ±0.00</td>
+                <td>98.38 ±0.17</td><td>98.39 ±0.17</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-full has-text-centered content">
+        <h2 class="title is-4" id="task-comparison">Task-Specific vs Multi-Task Training</h2>
+        <p class="mt-3">
+          Comparison of task-specific and multi-task training for the Transformer model across shared-data tasks. 
+          Accuracy (Acc), F1-score (F1), and improvements (Δ) are reported as mean ± std (%) over three runs.
+        </p>
+        <table class="table is-bordered is-striped is-fullwidth" style="margin-top: 1em;">
+          <thead>
+            <tr>
+              <th rowspan="2">Task</th>
+              <th colspan="2">Task-Specific Training</th>
+              <th colspan="2">Multi-Task Joint Training</th>
+              <th colspan="2">Improvement</th>
+            </tr>
+            <tr>
+              <th>Acc</th>
+              <th>F1</th>
+              <th>Acc</th>
+              <th>F1</th>
+              <th>ΔAcc</th>
+              <th>ΔF1</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Human Activity Recognition</td>
+              <td>75.40 ±0.93</td>
+              <td>75.49 ±0.73</td>
+              <td>87.79 ±0.00</td>
+              <td>86.47 ±0.00</td>
+              <td>+12.39</td>
+              <td>+10.98</td>
+            </tr>
+            <tr>
+              <td>User Identification</td>
+              <td>99.51 ±0.32</td>
+              <td>99.51 ±0.32</td>
+              <td>99.83 ±0.00</td>
+              <td>100.00 ±0.00</td>
+              <td>+0.32</td>
+              <td>+0.49</td>
+            </tr>
+            <tr>
+              <td>Proximity Recognition</td>
+              <td>77.52 ±3.13</td>
+              <td>77.35 ±3.24</td>
+              <td>87.85 ±0.00</td>
+              <td>88.67 ±0.00</td>
+              <td>+10.33</td>
+              <td>+11.32</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title is-3 has-text-centered">BibTeX</h2>
+<!--     <pre><code>@inproceedings{csi-bench,
+  Author    = {Zhu, Guozhen and Hu, Yuqian and Gao, Weihang and Wang, Wei-Hsiang and Wang, Beibei and Liu, K. J. Ray},
+  Title     = {CSI-Bench: A Large-Scale In-the-Wild Dataset for Multitask WiFi Sensing},
+  Year      = {2025},
+  Eprint = {arXiv preprint arXiv:2505.21866}
+}</code></pre> -->
+<pre><code>@article{csi-bench,
+author = {Guozhen Zhu and Yuqian Hu and Weihang Gao and Wei-Hsiang Wang and Beibei Wang and K. J. Ray Liu},
+title = {CSI-Bench: A Large-Scale In-the-Wild Dataset for Multi-task WiFi Sensing},
+year = {2025},
+journal={arXiv preprint arXiv:2505.21866},
+}</code></pre>
+  </div>
+</section>
+
+<!-- <section>
+  <div class="section" id="org-banners" style="display:flex">
+    <a href="#" target="_blank" rel="external">
+        <img class="center-block org-banner" src="static/images/your-logo.png">
+    </a>
+  </div>
+</section> -->
+
+<footer class="footer">
+  <div class="columns is-centered">
+    <div class="column is-8">
+      <div class="content">
+        <p>
+          This website is adapted from <a href="https://nerfies.github.io/">Nerfies</a>, licensed under a <a rel="license"
+                                            href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+          Commons Attribution-ShareAlike 4.0 International License</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
