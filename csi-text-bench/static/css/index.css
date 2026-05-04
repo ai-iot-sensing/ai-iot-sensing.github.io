@@ -160,16 +160,17 @@ body > footer {
 
 .csi-stat-card {
   background: var(--csi-bg-card);
-  border: 1px solid var(--csi-border);
+  border: 1px solid rgba(15, 23, 42, 0.08);
   border-radius: 12px;
   padding: 1.15rem 1rem;
   text-align: center;
-  backdrop-filter: blur(10px);
-  transition: border-color 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .csi-stat-card:hover {
-  border-color: rgba(61, 214, 198, 0.45);
+  border-color: var(--csi-border);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
   transform: translateY(-3px);
 }
 
@@ -200,29 +201,29 @@ body > footer {
 
 .csi-card {
   background: var(--csi-bg-card);
-  border: 1px solid var(--csi-border);
+  border: 1px solid rgba(15, 23, 42, 0.08);
   border-radius: 14px;
   padding: 1.35rem 1.25rem;
-  backdrop-filter: blur(10px);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .csi-card:hover {
-  border-color: rgba(61, 214, 198, 0.4);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+  border-color: var(--csi-border);
+  box-shadow: 0 10px 32px rgba(15, 23, 42, 0.1);
 }
 
 .csi-card h3 {
   font-family: var(--csi-font-display);
   font-size: 1.05rem;
   font-weight: 600;
-  color: #fff;
+  color: var(--csi-heading);
   margin-bottom: 0.6rem;
 }
 
 .csi-card p {
   font-size: 0.95rem;
-  color: #b4c2d6;
+  color: var(--csi-muted);
   line-height: 1.55;
 }
 
@@ -233,8 +234,8 @@ body > footer {
   align-items: center;
   justify-content: center;
   border-radius: 8px;
-  background: rgba(61, 214, 198, 0.2);
-  color: var(--csi-accent);
+  background: rgba(13, 148, 136, 0.15);
+  color: var(--csi-accent-dim);
   font-size: 0.85rem;
   font-weight: 700;
   margin-bottom: 0.75rem;
@@ -254,9 +255,9 @@ body > footer {
 
 .csi-figure-wrap .box {
   background: var(--csi-bg-card) !important;
-  border: 1px solid var(--csi-border) !important;
+  border: 1px solid rgba(15, 23, 42, 0.08) !important;
   border-radius: 16px !important;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 12px 40px rgba(15, 23, 42, 0.1);
   overflow: hidden;
 }
 
@@ -273,25 +274,25 @@ body > footer {
 
 /* Tables */
 .csi-section .table {
-  background: rgba(12, 18, 30, 0.6);
+  background: var(--csi-bg-card);
   color: var(--csi-text);
 }
 
 .csi-section .table thead th {
-  background: rgba(61, 214, 198, 0.12);
-  color: var(--csi-accent);
-  border-color: var(--csi-border);
+  background: rgba(13, 148, 136, 0.1);
+  color: var(--csi-accent-dim);
+  border-color: rgba(15, 23, 42, 0.1);
   font-family: var(--csi-font-display);
   font-size: 0.85rem;
 }
 
 .csi-section .table td,
 .csi-section .table th {
-  border-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(15, 23, 42, 0.08);
 }
 
 .csi-section .table.is-striped tbody tr:not(.is-selected):nth-child(even) {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(15, 23, 42, 0.03);
 }
 
 .csi-section .table-container {
@@ -313,9 +314,9 @@ body > footer {
   font-size: 0.8rem;
   padding: 0.35rem 0.85rem;
   border-radius: 999px;
-  background: rgba(61, 214, 198, 0.12);
+  background: rgba(13, 148, 136, 0.08);
   border: 1px solid var(--csi-border);
-  color: #b8e8e0;
+  color: var(--csi-accent-dim);
 }
 
 /* Layer steps */
@@ -355,28 +356,28 @@ body > footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 0 4px var(--csi-bg-deep);
+  box-shadow: 0 0 0 4px var(--csi-page-bg);
 }
 
 .csi-layer h4 {
   font-family: var(--csi-font-display);
-  color: #fff;
+  color: var(--csi-heading);
   font-size: 1.05rem;
   margin-bottom: 0.5rem;
 }
 
 .csi-layer p {
-  color: #b4c2d6;
+  color: var(--csi-muted);
   font-size: 0.95rem;
   line-height: 1.6;
 }
 
 /* BibTeX */
 #BibTeX pre {
-  background: rgba(12, 18, 30, 0.85) !important;
-  border: 1px solid var(--csi-border);
+  background: #f1f5f9 !important;
+  border: 1px solid rgba(15, 23, 42, 0.1);
   border-radius: 12px;
-  color: #a8d4cc;
+  color: #334155;
   padding: 1.25rem !important;
   font-size: 0.82rem;
   overflow-x: auto;
@@ -389,14 +390,14 @@ body > footer {
 
 /* Footer */
 .footer {
-  background: #060a10 !important;
-  border-top: 1px solid var(--csi-border);
+  background: #fafafa !important;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
   color: var(--csi-muted);
   padding: 2rem 1.5rem;
 }
 
 .footer a {
-  color: var(--csi-accent) !important;
+  color: #3273dc !important;
 }
 
 .footer a:hover {
@@ -407,23 +408,32 @@ body > footer {
   color: var(--csi-muted);
 }
 
-/* Bulma overrides for dark theme */
+/* Bulma tweaks for light CSI sections */
 .csi-section .is-size-7 {
   color: var(--csi-muted) !important;
+}
+
+.csi-subheading {
+  color: var(--csi-heading);
+  font-family: var(--csi-font-display);
+}
+
+.csi-table-section-title {
+  color: var(--csi-accent-dim);
 }
 
 .csi-abstract-box {
   max-width: 800px;
   margin: 2rem auto 0;
   padding: 1.25rem 1.5rem;
-  background: rgba(61, 214, 198, 0.06);
+  background: rgba(13, 148, 136, 0.06);
   border-left: 4px solid var(--csi-accent);
   border-radius: 0 12px 12px 0;
   text-align: left;
 }
 
 .csi-abstract-box p {
-  color: #c5d4e8;
+  color: var(--csi-text);
   font-size: 0.95rem;
   line-height: 1.65;
   margin: 0;
