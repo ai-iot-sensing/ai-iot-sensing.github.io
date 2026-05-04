@@ -12,8 +12,6 @@
   <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500,600,700|Noto+Sans:400,600|Castoro" rel="stylesheet">
 
   <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="static/css/index.css">
 </head>
@@ -94,14 +92,22 @@
   <div class="container csi-figure-wrap">
     <div class="columns is-centered m-6">
       <div class="column is-full has-text-centered content">
-        <div id="results-carousel" class="carousel results-carousel">
-          <div class="box m-5">
-            <div class="content has-text-centered">
-              <img src="static/images/concept_figure.png" alt="CSI-TextBench pairs WiFi CSI with natural language across seven ambient sensing tasks" width="88%"/>
-              <p>CSI-TextBench pairs diverse WiFi CSI recordings (including large-scale in-the-wild data) with hierarchical natural-language descriptions, supporting CSI–language alignment, open-vocabulary queries, attribute-level QA, and compositional scene understanding over activity, proximity, and identity.</p>
-            </div>
+        <figure class="box m-5 csi-concept-figure">
+          <div class="content has-text-centered">
+            <img
+              src="./static/images/concept_figure.png"
+              alt="CSI-TextBench pairs WiFi CSI with natural language across seven ambient sensing tasks"
+              width="2418"
+              height="1129"
+              loading="lazy"
+              decoding="async"
+              style="max-width: 88%; width: 100%; height: auto;"
+            />
           </div>
-        </div>
+          <figcaption class="content has-text-centered mt-4 csi-concept-caption">
+            CSI-TextBench pairs diverse WiFi CSI recordings (including large-scale in-the-wild data) with hierarchical natural-language descriptions, supporting CSI–language alignment, open-vocabulary queries, attribute-level QA, and compositional scene understanding over activity, proximity, and identity.
+          </figcaption>
+        </figure>
       </div>
     </div>
   </div>
@@ -361,7 +367,6 @@
           This website is adapted from <a href="https://nerfies.github.io/">Nerfies</a>, licensed under a <a rel="license"
             href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
         </p>
-        <p class="mt-2"><a href="../projects/project.html">CSI-Bench project page</a> · <a href="../index.html">Site home</a></p>
       </div>
     </div>
   </div>

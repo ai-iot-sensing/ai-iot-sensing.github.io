@@ -1,20 +1,22 @@
-/* CSI-TextBench project page (light theme) */
+/* CSI-TextBench project page (bright / light theme) */
 :root {
-  --csi-page-bg: #f4f7fb;
+  --csi-page-bg: #ffffff;
   --csi-bg-card: #ffffff;
   --csi-accent: #0d9488;
   --csi-accent-dim: #0f766e;
-  --csi-glow: rgba(13, 148, 136, 0.2);
+  --csi-glow: rgba(13, 148, 136, 0.18);
   --csi-text: #1e293b;
   --csi-muted: #64748b;
-  --csi-border: rgba(13, 148, 136, 0.22);
+  --csi-border: rgba(13, 148, 136, 0.2);
   --csi-heading: #0f172a;
-  --csi-gradient-hero: linear-gradient(180deg, #ecfdf5 0%, #f4f7fb 45%, #ffffff 100%);
+  --csi-gradient-hero: #ffffff;
   --csi-font-display: "Google Sans", "Noto Sans", system-ui, sans-serif;
 }
 
 html {
   scroll-behavior: smooth;
+  background-color: #ffffff;
+  color-scheme: only light;
 }
 
 body {
@@ -24,28 +26,16 @@ body {
   min-height: 100vh;
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  background:
-    radial-gradient(ellipse 85% 55% at 50% -15%, rgba(13, 148, 136, 0.09), transparent 50%),
-    radial-gradient(ellipse 55% 40% at 100% 70%, rgba(99, 102, 241, 0.05), transparent 45%),
-    radial-gradient(ellipse 45% 35% at 0% 85%, rgba(14, 165, 233, 0.04), transparent 42%);
-}
-
-body > section,
-body > footer {
-  position: relative;
-  z-index: 1;
+/* Bulma defaults can read gray; keep the whole page clearly bright */
+body .hero,
+body .section {
+  background-color: var(--csi-page-bg);
 }
 
 /* Hero */
 .csi-hero {
-  background: var(--csi-gradient-hero);
-  border-bottom: 1px solid var(--csi-border);
+  background: var(--csi-gradient-hero) !important;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.06);
   padding-bottom: 2rem;
 }
 
@@ -265,11 +255,19 @@ body > footer {
   border-radius: 8px;
 }
 
+.csi-figure-wrap .box .csi-concept-caption,
+.csi-figure-wrap .box figcaption,
 .csi-figure-wrap .box p {
   color: var(--csi-muted);
   font-size: 0.95rem;
   line-height: 1.6;
   padding: 0 0.5rem;
+}
+
+/* Single static teaser (avoid bulma-carousel hiding slides without .item + JS) */
+.csi-concept-figure {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Tables */
@@ -374,8 +372,8 @@ body > footer {
 
 /* BibTeX */
 #BibTeX pre {
-  background: #f1f5f9 !important;
-  border: 1px solid rgba(15, 23, 42, 0.1);
+  background: #f8fafc !important;
+  border: 1px solid rgba(15, 23, 42, 0.08);
   border-radius: 12px;
   color: #334155;
   padding: 1.25rem !important;
@@ -390,8 +388,8 @@ body > footer {
 
 /* Footer */
 .footer {
-  background: #fafafa !important;
-  border-top: 1px solid rgba(15, 23, 42, 0.08);
+  background: #ffffff !important;
+  border-top: 1px solid rgba(15, 23, 42, 0.06);
   color: var(--csi-muted);
   padding: 2rem 1.5rem;
 }
@@ -426,7 +424,8 @@ body > footer {
   max-width: 800px;
   margin: 2rem auto 0;
   padding: 1.25rem 1.5rem;
-  background: rgba(13, 148, 136, 0.06);
+  background: rgba(13, 148, 136, 0.04);
+  border: 1px solid rgba(15, 23, 42, 0.06);
   border-left: 4px solid var(--csi-accent);
   border-radius: 0 12px 12px 0;
   text-align: left;
