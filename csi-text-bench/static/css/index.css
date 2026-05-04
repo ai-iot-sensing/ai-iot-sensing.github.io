@@ -1,14 +1,15 @@
-/* CSI-TextBench project page */
+/* CSI-TextBench project page (light theme) */
 :root {
-  --csi-bg-deep: #0a0e17;
-  --csi-bg-card: rgba(18, 26, 42, 0.72);
-  --csi-accent: #3dd6c6;
-  --csi-accent-dim: #2a9d8f;
-  --csi-glow: rgba(61, 214, 198, 0.35);
-  --csi-text: #e8eef6;
-  --csi-muted: #8b9bb4;
-  --csi-border: rgba(61, 214, 198, 0.22);
-  --csi-gradient-hero: linear-gradient(145deg, #0d1525 0%, #121c2e 40%, #0a1622 100%);
+  --csi-page-bg: #f4f7fb;
+  --csi-bg-card: #ffffff;
+  --csi-accent: #0d9488;
+  --csi-accent-dim: #0f766e;
+  --csi-glow: rgba(13, 148, 136, 0.2);
+  --csi-text: #1e293b;
+  --csi-muted: #64748b;
+  --csi-border: rgba(13, 148, 136, 0.22);
+  --csi-heading: #0f172a;
+  --csi-gradient-hero: linear-gradient(180deg, #ecfdf5 0%, #f4f7fb 45%, #ffffff 100%);
   --csi-font-display: "Google Sans", "Noto Sans", system-ui, sans-serif;
 }
 
@@ -18,7 +19,7 @@ html {
 
 body {
   font-family: "Noto Sans", sans-serif;
-  background: var(--csi-bg-deep);
+  background: var(--csi-page-bg);
   color: var(--csi-text);
   min-height: 100vh;
 }
@@ -30,9 +31,9 @@ body::before {
   pointer-events: none;
   z-index: 0;
   background:
-    radial-gradient(ellipse 80% 50% at 50% -20%, var(--csi-glow), transparent 55%),
-    radial-gradient(ellipse 60% 40% at 100% 60%, rgba(42, 157, 143, 0.12), transparent 50%),
-    radial-gradient(ellipse 50% 35% at 0% 80%, rgba(99, 102, 241, 0.08), transparent 45%);
+    radial-gradient(ellipse 85% 55% at 50% -15%, rgba(13, 148, 136, 0.09), transparent 50%),
+    radial-gradient(ellipse 55% 40% at 100% 70%, rgba(99, 102, 241, 0.05), transparent 45%),
+    radial-gradient(ellipse 45% 35% at 0% 85%, rgba(14, 165, 233, 0.04), transparent 42%);
 }
 
 body > section,
@@ -63,8 +64,8 @@ body > footer {
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--csi-accent);
-  background: rgba(61, 214, 198, 0.1);
+  color: var(--csi-accent-dim);
+  background: rgba(13, 148, 136, 0.1);
   border: 1px solid var(--csi-border);
   margin-bottom: 1.25rem;
   font-family: var(--csi-font-display);
@@ -75,7 +76,7 @@ body > footer {
   font-weight: 700;
   line-height: 1.12;
   letter-spacing: -0.02em;
-  background: linear-gradient(180deg, #fff 0%, #c5d4e8 100%);
+  background: linear-gradient(180deg, #0f172a 0%, #334155 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -92,16 +93,15 @@ body > footer {
 }
 
 .csi-hero .link-block a.button.is-dark {
-  background: rgba(255, 255, 255, 0.08) !important;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: var(--csi-text) !important;
-  backdrop-filter: blur(8px);
+  background: #363636 !important;
+  border: 1px solid #2d2d2d !important;
+  color: #fff !important;
   transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .csi-hero .link-block a.button.is-dark:hover {
-  border-color: var(--csi-accent);
-  box-shadow: 0 0 24px var(--csi-glow);
+  border-color: var(--csi-accent) !important;
+  box-shadow: 0 4px 20px var(--csi-glow);
   transform: translateY(-2px);
 }
 
@@ -118,7 +118,7 @@ body > footer {
 
 .csi-section .title.is-3 {
   font-family: var(--csi-font-display);
-  color: #fff;
+  color: var(--csi-heading);
   font-weight: 600;
   margin-bottom: 1.5rem;
   position: relative;
@@ -141,7 +141,7 @@ body > footer {
 }
 
 .csi-section .content {
-  color: #c8d4e4;
+  color: var(--csi-text);
 }
 
 .csi-section .content strong {
