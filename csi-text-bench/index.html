@@ -2,45 +2,67 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="CSI-TextBench: WiFi CSI paired with natural language for language-grounded ambient perception.">
-  <meta name="keywords" content="WiFi, CSI, language alignment, multimodal, benchmark, dataset">
+  <meta name="description" content="CSI-TextBench: WiFi CSI paired with natural language for language-grounded ambient sensing—a large-scale dataset and benchmark.">
+  <meta name="keywords" content="WiFi, CSI, language alignment, multimodal, benchmark, dataset, NeurIPS, ambient intelligence">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CSI-TextBench: A Dataset and Benchmark for Language-Grounded Ambient Perception with WiFi</title>
+  <title>CSI-TextBench — Language-Grounded Ambient Sensing with WiFi</title>
 
   <link rel="icon" href="static/images/your-icon.png">
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans:400,500,600,700|Noto+Sans:400,600|Castoro" rel="stylesheet">
 
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"> -->
   <link rel="stylesheet" href="static/css/index.css">
 </head>
 <body>
 
-<section class="hero">
+<section class="hero csi-hero is-medium">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
+          <p class="csi-venue-pill">Dataset &amp; benchmark · NeurIPS 2026 submission</p>
           <h1 class="title is-1 publication-title is-bold">
-            CSI-TextBench: A Dataset and Benchmark for Language-Grounded Ambient Perception with WiFi
+            CSI-TextBench: A Dataset and Benchmark for Language-Grounded Ambient Sensing Perception
           </h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">Anonymous authors (camera-ready version will list affiliations)</span>
           </div>
-          <div class="column has-text-centered">
+
+          <div class="csi-stats">
+            <div class="csi-stat-card">
+              <div class="csi-stat-value">285,790</div>
+              <div class="csi-stat-label">CSI samples</div>
+            </div>
+            <div class="csi-stat-card">
+              <div class="csi-stat-value">7</div>
+              <div class="csi-stat-label">Sensing tasks</div>
+            </div>
+            <div class="csi-stat-card">
+              <div class="csi-stat-value">353</div>
+              <div class="csi-stat-label">Classes</div>
+            </div>
+            <div class="csi-stat-card">
+              <div class="csi-stat-value">~2.0M</div>
+              <div class="csi-stat-label">CSI–text pairs</div>
+            </div>
+            <div class="csi-stat-card">
+              <div class="csi-stat-value">86.9%</div>
+              <div class="csi-stat-label">Joint scene top-1</div>
+            </div>
+          </div>
+
+          <div class="column has-text-centered mt-5">
             <div class="publication-links">
-              <!-- Replace # with arXiv / PDF URLs when available
               <span class="link-block">
                 <a href="#" class="external-link button is-normal is-rounded is-dark" title="Link coming soon">
-                  <span class="icon"><i class="ai ai-arxiv"></i></span>
-                  <span>arXiv</span>
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                  <span>Paper</span>
                 </a>
               </span>
-              -->
               <span class="link-block">
                 <a href="#" class="external-link button is-normal is-rounded is-dark" title="Link coming soon">
                   <span class="icon"><i class="fab fa-github"></i></span>
@@ -54,7 +76,13 @@
                 </a>
               </span>
             </div>
-            <p class="is-size-7 mt-3 has-text-grey">Paper, code, and dataset links will be updated upon public release.</p>
+            <p class="is-size-7 mt-3 csi-hero-note">Paper, code, and dataset links will be updated upon public release.</p>
+          </div>
+
+          <div class="csi-abstract-box">
+            <p>
+              Indoor context from ambient sensing supports assisted living, smart buildings, and broader ambient intelligence, yet WiFi CSI lacks naturally co-occurring text unlike vision or speech. <strong>CSI-TextBench</strong> is the first large-scale dataset and benchmark for CSI–language alignment: three public benchmarks unified into hierarchical natural-language descriptions, enabling contrastive alignment that matches supervised classifiers without class labels, few-shot transfer to unseen classes, open-vocabulary prompts, and compositional scene understanding from a single embedding space.
+            </p>
           </div>
         </div>
       </div>
@@ -62,15 +90,15 @@
   </div>
 </section>
 
-<section class="section">
-  <div class="container" style="margin-top: -150px; margin-bottom: -100px;">
+<section class="section csi-section" style="padding-top: 3rem;">
+  <div class="container csi-figure-wrap">
     <div class="columns is-centered m-6">
       <div class="column is-full has-text-centered content">
         <div id="results-carousel" class="carousel results-carousel">
           <div class="box m-5">
             <div class="content has-text-centered">
-              <img src="static/images/concept_figure.PNG" alt="CSI-TextBench concept" width="84%"/>
-              <p>CSI-TextBench builds on diverse WiFi CSI recordings (including large-scale in-the-wild data) and pairs them with hierarchical natural-language descriptions, enabling CSI–language alignment, open-vocabulary queries, and compositional scene understanding.</p>
+              <img src="static/images/concept_figure.png" alt="CSI-TextBench pairs WiFi CSI with natural language across seven ambient sensing tasks" width="88%"/>
+              <p>CSI-TextBench pairs diverse WiFi CSI recordings (including large-scale in-the-wild data) with hierarchical natural-language descriptions, supporting CSI–language alignment, open-vocabulary queries, attribute-level QA, and compositional scene understanding over activity, proximity, and identity.</p>
             </div>
           </div>
         </div>
@@ -79,77 +107,114 @@
   </div>
 </section>
 
-<section class="section">
-  <div class="container" style="margin-bottom: 2vh;">
+<section class="section csi-section">
+  <div class="container">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Overview</h2>
+        <h2 class="title is-3">Why CSI–language alignment?</h2>
         <div class="content has-text-justified">
           <p>
-            Indoor context matters for assisted living, smart buildings, and broader ambient intelligence, yet it remains weakly connected to the language-aligned paradigm of modern multimodal systems. WiFi Channel State Information (CSI) passively captures human activity and environmental dynamics through ubiquitous wireless infrastructure—but unlike vision and audio, CSI lacks naturally co-occurring text, leaving a gap between wireless sensing and language-grounded AI.
-          </p>
-          <p>
-            <strong>CSI-TextBench</strong> is the first large-scale dataset and benchmark for CSI–language alignment. It unifies three sensing benchmarks into <strong>285,790</strong> samples across <strong>7 tasks</strong> and <strong>353 classes</strong>, paired with <strong>2,291</strong> hierarchically structured descriptions to form roughly <strong>2.0 million</strong> CSI–text pairs. The benchmark evaluates alignment methods across supervised-style recognition, few-shot transfer to unseen classes, open-vocabulary prompting, and compositional reasoning over activity, proximity, and identity.
-          </p>
-          <p>
-            Experiments show that contrastive alignment can match supervised classifiers without class labels, transfer through few-shot adaptation, and accept open-vocabulary natural-language queries. A single unified model supports compositional scene understanding on joint queries, achieving <strong>86.9%</strong> top-1 accuracy on <strong>140</strong> composite scenes—outperforming ensembles of task-specific classifiers. CSI-TextBench aims to establish WiFi as a language-indexed perception layer for ambient intelligence.
+            People spend much of their time indoors; WiFi is already deployed, always on, and sensitive to motion through <strong>Channel State Information (CSI)</strong>. Prior WiFi sensing work spans activity recognition, localization, fall detection, and user identification, but systems are typically tied to <strong>fixed label spaces</strong>, which limits flexible querying, reuse, and composition. Language alignment has made vision and audio queryable via shared embedding spaces—for CSI, the obstacle is <strong>data</strong>: existing datasets provide categorical labels, not paired natural language.
           </p>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container" style="margin-bottom: 2vh;">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Dataset</h2>
-        <div class="content has-text-justified">
-          <p>
-            CSI-TextBench integrates <strong>CSI-Bench</strong>, <strong>XRF55</strong>, and <strong>SignFi</strong> with standardized amplitude tensors and task-aware templated text (including hierarchical captions for multi-attribute scenes). Signals follow a unified preprocessing pipeline consistent with CSI-Bench: amplitude extraction, 5-second windows, z-normalization, and aligned subcarrier dimensions. Text is grounded in signal-relevant semantics—activity, gesture, proximity, motion source, and user-related attributes—without leaking deployment-specific identifiers.
-          </p>
-          <p class="has-text-centered"><strong>Task-level statistics (from the paper)</strong></p>
-          <div class="table-container">
-            <table class="table is-bordered is-striped is-fullwidth">
-              <thead>
-                <tr>
-                  <th>Task</th>
-                  <th>Source</th>
-                  <th>Classes</th>
-                  <th>CSI samples</th>
-                  <th>Unique texts</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr><td>HAR</td><td>CSI-Bench</td><td>5</td><td>55,684</td><td>221</td></tr>
-                <tr><td>Proximity</td><td>CSI-Bench</td><td>4</td><td>55,684</td><td>216</td></tr>
-                <tr><td>User ID</td><td>CSI-Bench</td><td>7</td><td>55,684</td><td>224</td></tr>
-                <tr><td>Fall detection</td><td>CSI-Bench</td><td>2</td><td>6,700</td><td>10</td></tr>
-                <tr><td>Motion source</td><td>CSI-Bench</td><td>4</td><td>60,858</td><td>20</td></tr>
-                <tr><td>Sign recognition</td><td>SignFi</td><td>276</td><td>8,280</td><td>1,380</td></tr>
-                <tr><td>Action recognition</td><td>XRF55</td><td>55</td><td>42,900</td><td>220</td></tr>
-                <tr><td><strong>Total</strong></td><td></td><td><strong>353</strong></td><td><strong>285,790</strong></td><td><strong>2,291</strong></td></tr>
-              </tbody>
-            </table>
+        <h3 class="title is-4 mt-5" style="color: #fff; font-family: var(--csi-font-display, 'Google Sans', sans-serif);">Three contributions</h3>
+        <div class="csi-cards">
+          <div class="csi-card">
+            <span class="csi-card-num">1</span>
+            <h3>Large-scale CSI–language alignment</h3>
+            <p>The first large-scale CSI–text resource unifying CSI-Bench, XRF55, and SignFi into <strong>285,790</strong> samples across <strong>7 tasks</strong>, with <strong>2,291</strong> descriptions forming roughly <strong>2.0M</strong> many-to-many pairs—learning from semantics rather than fixed labels alone.</p>
           </div>
-          <p class="is-size-7">
-            Multitask CSI-Bench tasks (HAR, Proximity, User ID) share the same underlying recordings; total task instances correspond to <strong>174,422</strong> unique recordings. For XRF55 and SignFi, the release includes preprocessing scripts and CSI–text registry files; obtain raw CSI from the original dataset providers under their licenses.
-          </p>
+          <div class="csi-card">
+            <span class="csi-card-num">2</span>
+            <h3>Controlled alignment benchmarking</h3>
+            <p>Five alignment methods across <strong>four paradigm families</strong> are evaluated under one dual-encoder design, showing CSI–language models can match or approach supervised performance while highlighting <strong>text design</strong> and <strong>class granularity</strong> as key factors.</p>
+          </div>
+          <div class="csi-card">
+            <span class="csi-card-num">3</span>
+            <h3>Composable ambient perception</h3>
+            <p>Protocols for zero-shot recognition, few-shot transfer, open-vocabulary prompting, and compositional QA show a <strong>single model</strong> can answer joint queries over activity, proximity, and identity—<strong>86.9%</strong> top-1 on <strong>140</strong> composite scenes, exceeding factorized per-attribute prediction.</p>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section">
-  <div class="container" style="margin-bottom: 2vh;">
+<section class="section csi-section">
+  <div class="container">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Benchmark</h2>
+        <h2 class="title is-3">Dataset construction</h2>
         <div class="content has-text-justified">
           <p>
-            Six alignment methods spanning contrastive (InfoNCE, SigLIP), anchor-based (LanguageBind, CentroBind), non-contrastive (Barlow Twins), and generative masked prediction objectives are evaluated under a shared dual-encoder design with a frozen text encoder and learned CSI encoder, isolating the effect of the alignment objective on many-to-many CSI–text correspondence.
+            <strong>Source datasets.</strong> CSI-Bench contributes five tasks (HAR, fall detection, motion source, proximity, user ID) from large-scale in-the-wild recordings across diverse commercial devices. XRF55 adds <strong>55</strong> fine-grained activities in controlled settings. SignFi contributes <strong>276</strong> sign-gesture classes at the finest semantic granularity. SignFi is released as preprocessing scripts and CSI–text registry files; raw CSI must be obtained from the original provider under its license.
+          </p>
+          <p>
+            <strong>Unified preprocessing.</strong> Sources differ in subcarriers, antennas, and sampling rates. Following the CSI-Bench pipeline, all inputs are standardized to an amplitude tensor <strong>X ∈ ℝ<sup>C×K×T</sup></strong>: amplitude only (discarding unstable phase), <strong>5-second</strong> windows, per-sample normalization, and subcarrier alignment to fixed <em>K</em>. This reduces hardware-specific variation while preserving motion-induced dynamics.
+          </p>
+          <p>
+            <strong>Text construction.</strong> Because CSI has no natural textual counterpart, descriptions are generated from labels via <strong>task-aware templates</strong> with paraphrastic variation. A <strong>hierarchical scheme</strong> uses level-1 captions for the primary phenomenon (activity or gesture) and level-2 <strong>composite</strong> captions that combine attributes—for example, activity, proximity, and user identity—enabling multi-attribute scene alignment.
+          </p>
+          <p>
+            <strong>Signal-grounded semantics.</strong> Text is restricted to properties plausibly encoded in CSI—activity, gesture, proximity, motion source, and user-related behavior—while omitting deployment-specific attributes (e.g., exact device type or room identity) to limit spurious correlations.
+          </p>
+          <p>
+            <strong>Many-to-many structure.</strong> Each CSI sample is paired with roughly <strong>4–9</strong> descriptions; each text matches many samples. This dense many-to-many structure differs from typical vision–language data and stresses alignment objectives (e.g., in-batch “negatives” may share semantics with positives).
+          </p>
+        </div>
+        <p class="has-text-centered mt-4"><strong>Task-level statistics</strong></p>
+        <div class="table-container">
+          <table class="table is-bordered is-striped is-fullwidth">
+            <thead>
+              <tr>
+                <th>Task</th>
+                <th>Source</th>
+                <th>Classes</th>
+                <th>CSI samples</th>
+                <th>Unique texts</th>
+                <th>Texts / sample</th>
+                <th>Total pairs</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>HAR</td><td>CSI-Bench</td><td>5</td><td>55,684</td><td>221</td><td>9</td><td>501,156</td></tr>
+              <tr><td>Proximity</td><td>CSI-Bench</td><td>4</td><td>55,684</td><td>216</td><td>9</td><td>501,156</td></tr>
+              <tr><td>User ID</td><td>CSI-Bench</td><td>7</td><td>55,684</td><td>224</td><td>8</td><td>445,472</td></tr>
+              <tr><td>Fall detection</td><td>CSI-Bench</td><td>2</td><td>6,700</td><td>10</td><td>5</td><td>33,500</td></tr>
+              <tr><td>Motion source</td><td>CSI-Bench</td><td>4</td><td>60,858</td><td>20</td><td>5</td><td>304,290</td></tr>
+              <tr><td>Sign recognition</td><td>SignFi</td><td>276</td><td>8,280</td><td>1,380</td><td>5</td><td>41,400</td></tr>
+              <tr><td>Action recognition</td><td>XRF55</td><td>55</td><td>42,900</td><td>220</td><td>4</td><td>171,600</td></tr>
+              <tr><td><strong>Total</strong></td><td></td><td><strong>353</strong></td><td><strong>285,790</strong></td><td><strong>2,291</strong></td><td></td><td><strong>1,998,574</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="is-size-7">
+          HAR, Proximity, and User ID share the same <strong>55,684</strong> underlying CSI-Bench recordings; <strong>285,790</strong> task-level instances correspond to <strong>174,422</strong> unique recordings. Pair counts follow Table 2 in the paper.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section csi-section">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Benchmark: alignment methods</h2>
+        <div class="content has-text-justified">
+          <p>
+            CSI–text alignment differs from image–text settings in three ways: <strong>dense many-to-many</strong> correspondence, <strong>no large-scale naturally paired text</strong>, and a sensing modality with distinct signal structure. All methods share a <strong>dual-encoder</strong> setup to isolate the alignment objective: a learned CSI encoder with projection maps CSI to <strong>z<sub>csi</sub> ∈ ℝ<sup>256</sup></strong>; a <strong>frozen</strong> pretrained text encoder (default: CLIP ViT-B/32) with projection yields <strong>z<sub>text</sub></strong>; embeddings are ℓ2-normalized before the loss.
+          </p>
+          <p>The CSI encoder is a <strong>1D-adapted ResNet-18</strong> on input reshaped to [B, C·K, T]. Training uses AdamW, cosine schedule with warmup, batch size 128, and early stopping; <strong>35 single-task</strong> models cover five objectives × seven tasks, plus multitask and supervised baselines as in the paper.</p>
+          <div class="csi-pills">
+            <span class="csi-pill">Contrastive · CLIP InfoNCE</span>
+            <span class="csi-pill">Contrastive · SigLIP</span>
+            <span class="csi-pill">Anchor-based · LanguageBind</span>
+            <span class="csi-pill">Non-contrastive · Barlow Twins</span>
+            <span class="csi-pill">Reconstructive · masked cross-modal prediction</span>
+          </div>
+          <p>
+            <strong>InfoNCE</strong> uses batch softmax contrastives (with false-negative pressure under shared semantics). <strong>SigLIP</strong> uses pairwise sigmoid losses suited to multiple positives. <strong>LanguageBind</strong> aligns CSI to a frozen text space with an asymmetric contrastive objective. <strong>Barlow Twins</strong> enforces cross-correlation consistency without explicit negatives. <strong>Masked prediction</strong> reconstructs text embeddings from partially masked CSI, probing structure beyond discrimination alone.
           </p>
         </div>
       </div>
@@ -157,11 +222,130 @@
   </div>
 </section>
 
-<section class="section" id="BibTeX">
+<section class="section csi-section">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Experimental highlights</h2>
+        <div class="content has-text-justified">
+          <div class="csi-layers">
+            <div class="csi-layer">
+              <h4>Layer 1 — Does alignment match supervision?</h4>
+              <p>Zero-shot classification assigns the class whose <strong>mean text-prototype</strong> embedding best matches the CSI embedding. <strong>CLIP InfoNCE</strong> recovers within <strong>0.3</strong> points of the supervised baseline on HAR, motion source, and user ID, and within <strong>2.4</strong> points on 276-class SignFi—<em>without any class labels</em>. Cross-modal retrieval shows InfoNCE yields a globally well-structured space (e.g., strong R@5 / R@10 on XRF55 and SignFi), not only a sharp top-1.</p>
+            </div>
+            <div class="csi-layer">
+              <h4>Layer 2 — Generalization to unseen classes and phrasing</h4>
+              <p>On SignFi, train on 200 classes and hold out 76: zero-shot on held-out classes is limited (language alone cannot disambiguate unseen fine-grained signs), but <strong>1-shot</strong> linear probing reaches <strong>54.0%</strong> and <strong>10-shot</strong> reaches <strong>74.6%</strong>—a deployment path closed-set classifiers do not offer. Open-vocabulary HAR tests novel prompts: layperson phrasings match training-template accuracy (~96%), while specialist wording drops unless <strong>anchored</strong> to phrasing closer to CLIP’s pretraining—showing alignment to text, with coverage bounded by the text encoder prior.</p>
+            </div>
+            <div class="csi-layer">
+              <h4>Layer 3 — One model for compositional scenes</h4>
+              <p>A <strong>unified multitask</strong> CLIP InfoNCE model (seven tasks, proportional sampling, augmentations) retains ≥95% of single-task accuracy on six of seven tasks at inference via <strong>task-specific text prototypes</strong> only—no task heads. On CSI-Bench’s co-labeled subset, <strong>Level 2 composite retrieval</strong> over 140 joint configurations (5 activities × 4 proximities × 7 users) reaches <strong>86.9%</strong> top-1, beating the ~70.4% joint accuracy from independent per-attribute QA—composite embeddings capture cross-attribute dependencies that factorized prediction misses.</p>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="title is-5 mt-5" style="color: var(--csi-accent, #3dd6c6);">Zero-shot vs. supervised (CLIP InfoNCE, %)</h3>
+        <div class="table-container">
+          <table class="table is-bordered is-striped is-fullwidth is-size-7">
+            <thead>
+              <tr>
+                <th>Method</th>
+                <th>HAR</th>
+                <th>Prox.</th>
+                <th>User ID</th>
+                <th>Fall</th>
+                <th>MotSrc</th>
+                <th>SignFi</th>
+                <th>XRF55</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>CLIP InfoNCE</td><td>97.8</td><td>94.6</td><td>100.0</td><td>94.2</td><td>99.5</td><td>97.0</td><td>77.5</td></tr>
+              <tr><td>Supervised (same encoder)</td><td>97.9</td><td>96.3</td><td>100.0</td><td>95.5</td><td>99.8</td><td>99.4</td><td>82.9</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="is-size-7 mt-2">Mean ± std over seeds and full multi-method tables are in the paper (Tables 3–9).</p>
+
+        <h3 class="title is-5 mt-5" style="color: var(--csi-accent, #3dd6c6);">Unified multitask model (%, zero-shot)</h3>
+        <div class="table-container">
+          <table class="table is-bordered is-striped is-fullwidth is-size-7">
+            <thead>
+              <tr>
+                <th>HAR</th>
+                <th>Proximity</th>
+                <th>User ID</th>
+                <th>Fall</th>
+                <th>MotSrc</th>
+                <th>SignFi</th>
+                <th>XRF55</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>96.0</td><td>84.5</td><td>100.0</td><td>95.9</td><td>98.2</td><td>96.1</td><td>79.2</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="title is-5 mt-5" style="color: var(--csi-accent, #3dd6c6);">Ambient scene QA (140 composites, Level 2)</h3>
+        <div class="table-container">
+          <table class="table is-bordered is-striped is-fullwidth is-size-7">
+            <thead>
+              <tr>
+                <th>Joint / Top-1</th>
+                <th>Top-3</th>
+                <th>Top-5</th>
+                <th>MRR</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>86.9</strong></td><td>96.9</td><td>98.2</td><td>0.919</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section csi-section">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Positioning among sensing–language work</h2>
+        <div class="content has-text-justified">
+          <p>
+            Prior RF- and sensor-language efforts often focus on a <strong>single task</strong> or modality, or do not release reusable sample–text pairs at scale. CSI-TextBench complements this landscape as an <strong>open, multi-task</strong> WiFi CSI–text benchmark spanning controlled to in-the-wild settings, diverse hardware, and class counts from 2 to 276—with explicit evaluation of alignment objectives under many-to-many pairing.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section csi-section">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Limitations &amp; broader impact</h2>
+        <div class="content has-text-justified">
+          <p>
+            Performance is partly bounded by the <strong>linguistic prior</strong> of the frozen text encoder: open-vocabulary behavior extends within that space, while highly specialist or sensor-physics phrasing may need domain-adapted encoders or anchoring. The gap between language semantics and fine-grained signal distinctions also motivates richer supervision beyond templated pairs—while keeping signal-grounded text as a controllable starting point.
+          </p>
+          <p>
+            CSI avoids identifiable video or audio, which can support privacy-sensitive assistive use cases (e.g., fall detection, smart-home automation) on existing infrastructure. Responsible deployment still requires <strong>consent</strong>, on-device or access-controlled processing, and clear policies. The benchmark builds on publicly available datasets collected under their respective approvals and licenses.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section csi-section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title is-3 has-text-centered">BibTeX</h2>
     <pre><code>@misc{csi-textbench,
-  title        = {CSI-TextBench: A Dataset and Benchmark for Language-Grounded Ambient Perception with WiFi},
+  title        = {CSI-TextBench: A Dataset and Benchmark for Language-Grounded Ambient Sensing Perception},
   author       = {Anonymous},
   year         = {2026}
 }</code></pre>
